@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import './App.css'
-import { ChallengeProgress, DayProgress, RULES } from './types/cs50'
+import { ChallengeProgress, RULES } from './types/cs50'
 import ChallengeTable from './components/ChallengeTable'
 
 function App() {

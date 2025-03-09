@@ -5,7 +5,7 @@ import {
   createColumnHelper,
   flexRender,
 } from '@tanstack/react-table';
-import { Rule, DayProgress } from '../types/cs50';
+import { Rule } from '../types/cs50';
 
 interface ChallengeTableProps {
   data: {
