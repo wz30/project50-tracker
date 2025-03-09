@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  background-color: #f3f4f6;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+}
+
+.checkbox-container {
+  @apply relative inline-block;
+}
+
+.checkbox-container input[type="checkbox"] {
+  @apply appearance-none w-5 h-5 border border-gray-300 rounded;
+  @apply checked:bg-blue-500 checked:border-transparent;
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  @apply cursor-pointer transition-colors duration-200;
+}
+
+.checkbox-container input[type="checkbox"]::after {
+  content: '';
+  @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  @apply w-3 h-3 opacity-0 transition-opacity;
+  @apply checked:opacity-100;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.rule-icon {
+  @apply w-6 h-6 rounded-full flex items-center justify-center text-lg;
+  @apply transition-transform hover:scale-110;
+}
+
+.tab-button {
+  @apply px-4 py-2 font-medium rounded-md transition-colors;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+}
+
+.tab-button.active {
+  @apply bg-white text-gray-700 border-b-2 border-blue-500;
+}
+
+.tab-button:not(.active) {
+  @apply text-gray-500 hover:text-gray-700;
+}
